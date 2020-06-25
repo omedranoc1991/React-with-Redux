@@ -1,20 +1,33 @@
+//First prject
+
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Faker from 'faker'
+import CommentDetail from './CommentDetail'
+import ApprovalCard from './ApprovalCard'
 
-// component
-const Test = ()=>{                     
-var text = "Click me"     
-    return (
-<div>
-  <babel className='label' htmlFor='test'>enter name</babel>
-  <input id='test' type='text' style={{border:'1px solid red'}}></input>
-  <button style={{backgroundColor: 'blue', color : 'white'}}>{text}</button>
-</div>
+//get local time
+function getTime() {
+  return (new Date()).toLocaleTimeString()
+}
+
+//Component comments
+const Test = () =>{
+    return (     
+      <div className="ui container comments">
+          <ApprovalCard>
+             <CommentDetail author="Oscar" date={getTime()} /> 
+          </ApprovalCard>  
+          <ApprovalCard>
+             <CommentDetail author="Saul" date={getTime()}/>
+          </ApprovalCard>        
+          <ApprovalCard>
+             <CommentDetail author="Ricardo" date={getTime()} />  
+          </ApprovalCard>
+              
+      </div>     
+      
     )
-    
-} 
+}
 
-//render components
 ReactDOM.render(<Test />, document.getElementById('root'))
-
-
